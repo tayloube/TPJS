@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 4</title>
+    <script>
+        function afficherTableFor() {
+            let nombre = parseInt(prompt("Entrez un nombre pour afficher sa table de multiplication :"));
+            if (!isNaN(nombre)) {
+                console.log("Table de multiplication avec for:");
+                for (let i = 1; i <= 10; i++) {
+                    console.log(`${nombre} x ${i} = ${nombre * i}`);
+                }
+            }
+        }
+
+        function afficherTableWhile() {
+            let nombre = parseInt(prompt("Entrez un nombre pour afficher sa table de multiplication :"));
+            if (!isNaN(nombre)) {
+                console.log("Table de multiplication avec while:");
+                let i = 1;
+                while (i <= 10) {
+                    console.log(`${nombre} x ${i} = ${nombre * i}`);
+                    i++;
+                }
+            }
+        }
+
+        function afficherTableDoWhile() {
+            let nombre = parseInt(prompt("Entrez un nombre pour afficher sa table de multiplication :"));
+            if (!isNaN(nombre)) {
+                console.log("Table de multiplication avec do...while:");
+                let i = 1;
+                do {
+                    console.log(`${nombre} x ${i} = ${nombre * i}`);
+                    i++;
+                } while (i <= 10);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="afficherTableFor()">Afficher avec for</button>
+    <button onclick="afficherTableWhile()">Afficher avec while</button>
+    <button onclick="afficherTableDoWhile()">Afficher avec do...while</button>
+</body>
+</html>

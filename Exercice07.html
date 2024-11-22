@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 7</title>
+    <script>
+        function calculerAire() {
+            let rayon = parseFloat(prompt("Entrez le rayon du cercle :"));
+            if (!isNaN(rayon) && rayon > 0) {
+                let aire = Math.PI * rayon * rayon;
+                alert(`L'aire du cercle est : ${aire.toFixed(2)}`);
+            } else {
+                alert("Veuillez entrer un rayon valide.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="calculerAire()">Calculer l'aire</button>
+</body>
+</html>

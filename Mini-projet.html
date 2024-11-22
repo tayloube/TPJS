@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul de la Moyenne</title>
+    <style>
+        /* CSS : Design simple */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: calc(100% - 22px);
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculateur de Moyenne</h1>
+    <form id="gradeForm">
+        <input type="text" placeholder="Note 1" id="note1" required>
+        <input type="text" placeholder="Note 2" id="note2" required>
+        <input type="text" placeholder="Note 3" id="note3" required>
+        <button type="button" id="calculateButton">Calculer la Moyenne</button>
+        <p class="error" id="errorMessage"></p>
+    </form>
+    <div class="result" id="result"></div>
+    <script>
+        // JavaScript : Validation et Calcul
+        document.getElementById('calculateButton').addEventListener('click', function () {
+            const note1 = document.getElementById('note1').value;
+            const note2 = document.getElementById('note2').value;
+            const note3 = document.getElementById('note3').value;
+            const errorMessage = document.getElementById('errorMessage');
+            const result = document.getElementById('result');
+
+            // Réinitialiser les messages
+            errorMessage.textContent = '';
+            result.textContent = '';
+
+            // Vérification que les entrées sont des nombres
+            if (isNaN(note1) || isNaN(note2) || isNaN(note3) || note1 === '' || note2 === '' || note3 === '') {
+                errorMessage.textContent = 'Veuillez entrer des nombres valides pour toutes les notes.';
+                return;
+            }
+
+            // Calcul de la moyenne
+            const moyenne = (parseFloat(note1) + parseFloat(note2) + parseFloat(note3)) / 3;
+            result.textContent = `La moyenne est : ${moyenne.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>

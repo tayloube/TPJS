@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 9</title>
+    <script>
+        function validerFormulaire(event) {
+            event.preventDefault();
+            let nom = document.getElementById("nom").value.trim();
+            let email = document.getElementById("email").value.trim();
+
+            if (nom === "" || email === "") {
+                alert("Tous les champs sont obligatoires !");
+            } else {
+                alert("Formulaire soumis avec succès !");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulaire</h1>
+    <form onsubmit="validerFormulaire(event)">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" required>
+        <br><br>
+        <label for="email">Email :</label>
+        <input type="email" id="email" required>
+        <br><br>
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 10</title>
+    <script>
+        function afficherDateActuelle() {
+            // Création de l'objet Date
+            let date = new Date();
+
+            // Formatage de la date au format JJ/MM/AAAA
+            let jour = String(date.getDate()).padStart(2, "0");
+            let mois = String(date.getMonth() + 1).padStart(2, "0"); // Les mois commencent à 0
+            let annee = date.getFullYear();
+
+            // Construction de la chaîne de date
+            let dateFormatee = `${jour}/${mois}/${annee}`;
+
+            // Affichage de la date sur la page
+            document.getElementById("date").innerText = "Date actuelle : " + dateFormatee;
+        }
+    </script>
+</head>
+<body onload="afficherDateActuelle()">
+    <h1>Date actuelle</h1>
+    <p id="date">Chargement...</p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 6</title>
+    <script>
+        function afficherJour() {
+            const jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+            let numero = parseInt(prompt("Entrez un numéro (1-7) :"));
+
+            if (numero >= 1 && numero <= 7) {
+                alert(`Le jour correspondant est : ${jours[numero - 1]}`);
+            } else {
+                alert("Numéro invalide. Entrez un chiffre entre 1 et 7.");
+            }
+        }
+    </script>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      button {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        margin: 8px;
+      }
+    </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>Lundi</th>
+      <th>Mardi</th>
+      <th>Mercredi</th>
+      <th>Jeudi</th>
+      <th>Vendredi</th>
+      <th>Samedi</th>
+      <th>Dimanche</th>
+    </tr>
+  </table>
+  <button onclick="afficherJour()">Afficher le jour</button>
+</body>
+</html>
